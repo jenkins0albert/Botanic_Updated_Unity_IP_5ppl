@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "858295535851",
+    "firebase_url": "https://botanicgardensar-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "botanicgardensar",
+    "storage_bucket": "botanicgardensar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858295535851:android:28e9c66afbac76b33916ae",
+        "android_client_info": {
+          "package_name": "com.botanicgarden"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyActlJe3u1wj7KQw7JSnkFg4att4pW8uuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="562eb1755a8854eb4021ee11ab23b016" size="0.200000 0.200000" />
+    <ImageTarget name="gazebo" size="0.050000 0.030500" />
+  </Tracking>
+</QCARConfig>
