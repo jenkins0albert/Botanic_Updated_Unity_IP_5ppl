@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Maze1
+  - Maze2
+  - Maze3
+  - Bingo
   layers:
   - Default
   - TransparentFX
