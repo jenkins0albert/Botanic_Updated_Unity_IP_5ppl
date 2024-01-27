@@ -1,42 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using Unity.UI;
+using Lean.Touch;
 
 public class BallScript : MonoBehaviour
 {
-    private bool isThrown = false;
-    public bool inBox = false;
-    public int count = 0;
-
-    void Update()
+    void Start()
     {
-        if (isThrown && GetComponent<Rigidbody>().velocity.magnitude < 0.1f)
+        Debug.Log("Ball script is working");
+    }
+
+    private void OnCollisonEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Box")
         {
-            // Check if the ball has stopped moving, e.g., landed
-            CheckIfLandedInBox();
+            Destroy(collision.gameObject);
+            Debug.Log("Drag is working");
         }
     }
 
-    void CheckIfLandedInBox()
-    {
-        // Implement logic to check if the ball is in the box
-        // You can use collider checks, coordinates, or any other method
-    }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Box"))
-        {
-            inBox = true;
-            count += 1;
-            Debug.Log("Ball script is count");
-            Debug.Log(count);
-        }
-    }
+    /*public GameObject basketballPrefab;
+    public Transform throwPoint;
+    public float throwForce = 10f;
 
-    public void Throw(Vector3 force)
+    public void ThrowBasketball()
     {
-        GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
-        isThrown = true;
-    }
+        // Instantiate a new basketball at the throw point
+        GameObject basketball = Instantiate(basketballPrefab, throwPoint.position, Quaternion.identity);
+
+        // Calculate the throw direction based on the AR camera's forward direction
+        Vector3 throwDirection = Camera.main.transform.forward;
+
+        // Apply force to the basketball based on the calculated throw direction
+        Rigidbody rb = basketball.GetComponent<Rigidbody>();
+        rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+    }*/
+
 }
+
+    
