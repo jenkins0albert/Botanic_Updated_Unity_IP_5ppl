@@ -9,6 +9,12 @@ public class FenceCollide : MonoBehaviour
     public GameObject fence;
     public GameObject fencegroundplane;
     public AudioSource buildsound;
+
+    public ParticleSystem buildeffectfence;
+
+
+    public TapInteractions tap;
+
     public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "fencedrag")
@@ -17,11 +23,15 @@ public class FenceCollide : MonoBehaviour
             fence.SetActive(true);
             fencegroundplane.SetActive(false);
             buildsound.Play();
+            buildeffectfence.Play();
+            Debug.Log("fence");
+
+            tap.count += 1;
         }
     }
     void Start()
     {
-        buildsound.Play();
+        
     }
 
     // Update is called once per frame

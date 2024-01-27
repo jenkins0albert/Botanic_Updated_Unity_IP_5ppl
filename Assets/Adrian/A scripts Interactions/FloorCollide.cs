@@ -9,6 +9,10 @@ public class FloorCollide : MonoBehaviour
     public GameObject floor;
     public GameObject floorgroundplane;
     public AudioSource buildsound;
+
+    public ParticleSystem buildeffectfloor;
+
+    public TapInteractions tap;
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "floordrag")
@@ -17,11 +21,15 @@ public class FloorCollide : MonoBehaviour
             floor.SetActive(true);
             floorgroundplane.SetActive(false);
             buildsound.Play();
+            buildeffectfloor.Play();
+            Debug.Log("floor");
+
+            tap.count += 1;
         }
     }
     void Start()
     {
-        buildsound.Play();
+        
     }
 
     // Update is called once per frame
