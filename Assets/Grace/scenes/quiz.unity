@@ -22746,13 +22746,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Astronaut
+  mTrackableName: LearningForest
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/VuforiaMars_Images.xml
-  mAspectRatio: 1.7272727
+  mDataSetPath: Vuforia/Grace_Targets.xml
+  mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.06985
-  mHeight: 0.12065
+  mWidth: 0.23
+  mHeight: 0.23
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -22798,8 +22798,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 840468364}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Astronaut
-  mDatasetName: Vuforia/VuforiaMars_Images.xml
+  mTargetName: LearningForest
+  mDatasetName: Vuforia/Grace_Targets.xml
   mCastedBehaviour: {fileID: 840468364}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
