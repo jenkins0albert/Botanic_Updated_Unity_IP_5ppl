@@ -36,4 +36,8 @@ public class gamemanager : MonoBehaviour
         //set active old one
         //set active new one
     }
+    public void debugtest()
+    {
+        Debug.Log("testing");
+    }
 }
