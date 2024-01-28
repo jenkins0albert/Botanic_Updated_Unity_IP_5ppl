@@ -7,8 +7,11 @@ public class AnimationPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject buildui;
+
+    public GameObject decorateui;
     public bool opencheck = false;
-    
+    public bool opencheckdec = false;
+
     public void OpenUI()
     {
         if (opencheck == false) 
@@ -28,6 +31,25 @@ public class AnimationPlayer : MonoBehaviour
             opencheck = false;
         }
     }
+
+    public void OpenDecUI()
+    {
+        if (opencheckdec == false)
+        {
+
+            decorateui.GetComponent<Animator>().Play("scrollbar_appear");
+            opencheckdec = true;
+        }
+
+        else
+        {
+            decorateui.GetComponent<Animator>().Play("scrollbar_disappear");
+            opencheckdec = false;
+        }
+            
+    }
+
+   
 
     void Start()
     {
