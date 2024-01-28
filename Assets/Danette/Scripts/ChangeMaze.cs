@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ChangeMaze : MonoBehaviour
 {
@@ -14,8 +15,8 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze1Trigger;
     public GameObject Maze2Trigger;
     public GameObject Maze3Trigger;
-    public GameObject UIStart; //Canvas for start button
-    public GameObject UIEnd; //Canvas for End canvas
+    //public GameObject UIStart; //Canvas for start button
+    //public GameObject UIEnd; //Canvas for End canvas
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +41,40 @@ public class ChangeMaze : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
+    
+
+    //=============TIMER SCRIPT=========================
+    public TextMeshProUGUI TimerText; //Display Time text
+    public Button startButton; //Start timer countdown
+    public float countdownTime = 60f; //Timer = 60 seconds
+    private bool isCountingDown = false;
+    public GameObject canvasPanelSTART; //Start version of UI
+    public GameObject canvasPanelENDLose; // End (Lose)Version of UI
+    public GameObject canvasPanelENDWin; // End (Win)Version of UI
+
+
+
+    public void StartCountdown() //Start timer
+    {
+        countdownTime = 60f; //reset timer time
+        isCountingDown = true;
+    }
+
+    public void StopCountdown()// Stop timer
+    {
+        isCountingDown = false;
+        
+
+    }
+
+    public void hideCanvas()
+    {
+        canvasPanelSTART.SetActive(false);
+        
+    }
+
+
+// Start is called before the first frame update
     void Start()
     {
         startButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
@@ -64,33 +98,5 @@ public class ChangeMaze : MonoBehaviour
         }
     }
 
-    //=============TIMER SCRIPT=========================
-    public Text TimerText; //Display Time text
-    public Button startButton; //Start timer countdown
-    public float countdownTime = 60f; //Timer = 60 seconds
-    private bool isCountingDown = false;
-    public GameObject canvasPanelSTART; //Start version of UI
-    public GameObject canvasPanelENDLose; // End (Lose)Version of UI
-    public GameObject canvasPanelENDWin; // End (Win)Version of UI
 
-
-
-    void StartCountdown() //Start timer
-    {
-        countdownTime = 60f; //reset timer time
-        isCountingDown = true;
-    }
-
-    void StopCountdown()// Stop timer
-    {
-        isCountingDown = false;
-        
-
-    }
-
-    void hideCanvas()
-    {
-        canvasPanelSTART.SetActive(false);
-        
-    }
 }
