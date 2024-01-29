@@ -4,7 +4,7 @@ using UnityEngine;
 using Vuforia;
 using Lean.Touch;
 using TMPro;
-using UnityEngine.UI;
+using Unity.UI;
 
 public class BallShooter : MonoBehaviour
 {
