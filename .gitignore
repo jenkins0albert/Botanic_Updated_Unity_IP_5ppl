@@ -287,3 +287,8 @@ Assets/Plugins/Android/org.jetbrains.kotlinx.kotlinx-coroutines-android-1.6.1.ja
 Assets/Plugins/Android/org.jetbrains.kotlinx.kotlinx-coroutines-core-jvm-1.6.1.jar
 Assets/Plugins/Android/org.jetbrains.kotlinx.kotlinx-coroutines-play-services-1.6.1.jar
 ProjectSettings/AndroidResolverDependencies.xml
+Assets/Editor/Vuforia/ImageTargetTextures/Grace_Targets/greenhouse_scaled.jpg
+Assets/Editor/Vuforia/ImageTargetTextures/Grace_Targets/learningforest_scaled.jpg
+Assets/Editor/Vuforia/ImageTargetTextures/Grace_Targets/Untitled_scaled.jpg
+Assets/StreamingAssets/Vuforia/Grace_Targets.dat
+Assets/StreamingAssets/Vuforia/Grace_Targets.xml
