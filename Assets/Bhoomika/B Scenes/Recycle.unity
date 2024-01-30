@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 168124089}
   - component: {fileID: 168124088}
   - component: {fileID: 168124087}
-  - component: {fileID: 168124093}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -289,32 +288,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &168124093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168124086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc98219a83dff145947365dc914d06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapThreshold: 0.2
-  swipeThreshold: 100
-  referenceDpi: 200
-  guiLayers:
-    serializedVersion: 2
-    m_Bits: 32
-  useTouch: 1
-  useHover: 1
-  useMouse: 1
-  useSimulator: 1
-  disableMouseEmulation: 1
-  recordFingers: 1
-  recordThreshold: 5
-  recordLimit: 10
 --- !u!1 &305471415
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479d695282ba6cf4ba3ab3c4848f05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deselectWithNothing: 0
+  deselectWithNothing: 1
   limit: 0
   maxSelectables: 5
   reselect: 3
@@ -744,7 +717,8 @@ MonoBehaviour:
   - {fileID: 8891723351199657519}
   - {fileID: 3549955400261358527}
   throwPoint: {fileID: 2026477452}
-  throwForce: 0.1
+  minThrowForce: 0.1
+  maxThrowForce: 5
   vB: {fileID: 897178618}
 --- !u!1 &897178613
 GameObject:
@@ -2208,6 +2182,7 @@ GameObject:
   - component: {fileID: 3866413992516392816}
   - component: {fileID: 7755340278962707027}
   - component: {fileID: 8883252787861863063}
+  - component: {fileID: 8883252787861863064}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2336,7 +2311,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2470,6 +2445,29 @@ MonoBehaviour:
   onSelectedSelectFingerUp:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8883252787861863064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549955400261358527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Use:
+    Filter: 0
+    IgnoreStartedOverGui: 1
+    RequiredFingerCount: 0
+    RequiredMouseButtons: 0
+    RequiredSelectable: {fileID: 8883252787861863063}
+  _camera: {fileID: 0}
+  sensitivity: 1
+  damping: -1
+  inertia: 0
+  remainingTranslation: {x: 0, y: 0, z: 0}
 --- !u!1 &8891723351199657519
 GameObject:
   m_ObjectHideFlags: 0
