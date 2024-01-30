@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vuforia;
+using Lean.Touch;
+using TMPro;
+using Unity.UI;
 
 public class PickUp : MonoBehaviour
 {
@@ -8,15 +12,30 @@ public class PickUp : MonoBehaviour
     public BoxCollider spawnArea;
     public int numberOfObjectsToSpawn = 10;
 
+    private bool isSpawning = false;
+
+    public TextMeshProUGUI timerText;
+
     void Start()
     {
-        
-        Debug.Log("Started");
+        //
     }
 
-    public void SpawnObjects()
+    public void StartSpawning()
     {
-        for (int i = 0; i < numberOfObjectsToSpawn; i++)
+        if (!isSpawning)
+        {
+            StartCoroutine(Spawner());
+        }
+    }
+
+    IEnumerator Spawner()
+    {
+        isSpawning = true;
+        float totalTime = 5f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < totalTime)
         {
             // Generate a random position within the Box Collider bounds
             Vector3 randomPosition = GetRandomPositionInCollider(spawnArea);
@@ -24,8 +43,14 @@ public class PickUp : MonoBehaviour
             // Instantiate the object at the random position
             Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
 
-            Debug.Log("Spawned");
+            // Wait for a random time before spawning the next object
+            float waitTime = Random.Range(0.1f, 1.0f);
+            yield return new WaitForSeconds(waitTime);
+
+            elapsedTime += waitTime;
         }
+
+        isSpawning = false;
     }
 
     Vector3 GetRandomPositionInCollider(BoxCollider collider)
@@ -36,8 +61,7 @@ public class PickUp : MonoBehaviour
         float z = Random.Range(collider.bounds.min.z, collider.bounds.max.z);
 
         return new Vector3(x, y, z);
-
-
     }
 }
+
 

@@ -434,6 +434,7 @@ MonoBehaviour:
     type: 3}
   spawnArea: {fileID: 318167559}
   numberOfObjectsToSpawn: 10
+  timerText: {fileID: 0}
 --- !u!114 &699178067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,7 +930,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 699178066}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
-        m_MethodName: SpawnObjects
+        m_MethodName: StartSpawning
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
