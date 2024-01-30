@@ -16,7 +16,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class UpdateMazeScore : MonoBehaviour
 {
 
-    DatabaseReference dbPlayerStats; //Original firebase for user profiles
+    DatabaseReference dbPlayerStats; //Original firebase for user profiles "main database"
     DatabaseReference dbLeaderboard; 
 
     
@@ -24,7 +24,7 @@ public class UpdateMazeScore : MonoBehaviour
     
     public void Awake()
     {
-        dbPlayerStats = FirebaseDatabase.DefaultInstance.GetReference("playerstatsmaze");//Calls the parent??
+        dbPlayerStats = FirebaseDatabase.DefaultInstance.GetReference("playerstatsmaze");//Calls the parent?? 
         dbLeaderboard = FirebaseDatabase.DefaultInstance.GetReference("leaderboardmaze");
 
     }
