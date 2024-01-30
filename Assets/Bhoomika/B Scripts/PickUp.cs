@@ -4,7 +4,7 @@ using UnityEngine;
 using Vuforia;
 using Lean.Touch;
 using TMPro;
-using Unity.UI;
+using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour
 {
@@ -32,7 +32,7 @@ public class PickUp : MonoBehaviour
     IEnumerator Spawner()
     {
         isSpawning = true;
-        float totalTime = 5f;
+        float totalTime = 10f;
         float elapsedTime = 0f;
 
         while (elapsedTime < totalTime)
@@ -61,6 +61,11 @@ public class PickUp : MonoBehaviour
         float z = Random.Range(collider.bounds.min.z, collider.bounds.max.z);
 
         return new Vector3(x, y, z);
+    }
+
+    public void TestTap()
+    {
+        Debug.Log("Yay you tapped");
     }
 }
 

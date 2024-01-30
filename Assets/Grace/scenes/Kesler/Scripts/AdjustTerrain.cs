@@ -15,6 +15,7 @@ public class AdjustTerrain : MonoBehaviour
     {
         ScaleSlider = GameObject.Find("ScaleSlider").GetComponent<Slider>();
 
+        currentScale = 0.2f;
         transform.localScale = new Vector3(ScaleSlider.value, ScaleSlider.value, ScaleSlider.value);
     }
 
@@ -22,6 +23,8 @@ public class AdjustTerrain : MonoBehaviour
     void Update()
     {   
         transform.localScale = new Vector3(ScaleSlider.value, ScaleSlider.value, ScaleSlider.value);
+        Debug.Log("Current Scale: " + transform.localScale);
+
     }
 
     private void OnGUI()
