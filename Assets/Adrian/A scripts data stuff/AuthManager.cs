@@ -26,6 +26,8 @@ public class AuthManager : MonoBehaviour
 
     public TMP_InputField passwordField;
 
+    
+
 
     public TMP_InputField EmailFieldLogin;
     public TMP_InputField PasswordFieldLogin;
@@ -37,7 +39,10 @@ public class AuthManager : MonoBehaviour
     public GameObject createAccBtn;
 
     public GameObject loginpage;
-    
+
+    public TextMeshProUGUI signuperror;
+    public TextMeshProUGUI loginerror;
+
     public void SignUp()
     {
 
@@ -92,6 +97,8 @@ public class AuthManager : MonoBehaviour
             {
                 Debug.Log("Sorry, there was an error creating your new account, ERROR: " + task.Exception);
                 Debug.Log("error");
+                signuperror.color = Color.red;
+                signuperror.text = "Invalid email or password";
                 return;//exit from the attempt
             }
             else if (task.IsCompleted)
@@ -103,7 +110,10 @@ public class AuthManager : MonoBehaviour
                 Debug.LogFormat("Welcome to Ant Farm Simulator {0}", newPlayer.User.UserId);
                 CreateNewUser(newPlayer.User.UserId, username, username, email);
 
-                
+                signuperror.color = Color.white;
+                signuperror.text = "Account made";
+
+
                 //do anything you want after player creation eg. create new player
 
             }
@@ -129,6 +139,9 @@ public class AuthManager : MonoBehaviour
             {
                 Debug.Log("Sorry, there was an error creating your new account, ERROR: " + task.Exception);
                 Debug.Log("error");
+                loginerror.color = Color.red;
+                loginerror.text = "Invalid email or password";
+
 
             }
             else if (task.IsCompleted)
@@ -143,6 +156,12 @@ public class AuthManager : MonoBehaviour
 
             }
         });
+    }
+
+    public void RefreshText()
+    {
+        loginerror.text = "";
+        signuperror.text = "";
     }
 
 
@@ -176,12 +195,13 @@ public class AuthManager : MonoBehaviour
     }
     public void SignOutUser()
     {
-        Debug.Log("sign out");
+        
         if (auth.CurrentUser != null)
         {
             auth.SignOut();
-
+            Debug.Log("sign out");
             loginpage.SetActive(true);
+            
             
 
         }
