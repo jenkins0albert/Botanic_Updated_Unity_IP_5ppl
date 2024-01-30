@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using UnityEditor;
 
 public class ChangeMaze : MonoBehaviour
 {
@@ -36,7 +38,13 @@ public class ChangeMaze : MonoBehaviour
         {
             //Stop timer, send to FB
             StopCountdown();
-            canvasPanelENDWin.SetActive(true);
+            canvasPanelENDWin.SetActive(true); //Show Win UI !
+            int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
+
+            //Firebase. Only item to insert is int Score
+            //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
+            UpdateValueToFirebase(score);
+
         }
     }
 
@@ -52,7 +60,13 @@ public class ChangeMaze : MonoBehaviour
     public GameObject canvasPanelENDLose; // End (Lose)Version of UI
     public GameObject canvasPanelENDWin; // End (Win)Version of UI
 
+    public UpdateMazeScore UMSRef;
+    
+    void UpdateValueToFirebase(int score)
+    {
+        UMSRef.PlayerStatsUpdate("uuid", "username", score); 
 
+    }
 
     public void StartCountdown() //Start timer
     {

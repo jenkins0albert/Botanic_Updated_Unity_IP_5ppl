@@ -292,3 +292,15 @@ Assets/Editor/Vuforia/ImageTargetTextures/Grace_Targets/learningforest_scaled.jp
 Assets/Editor/Vuforia/ImageTargetTextures/Grace_Targets/Untitled_scaled.jpg
 Assets/StreamingAssets/Vuforia/Grace_Targets.dat
 Assets/StreamingAssets/Vuforia/Grace_Targets.xml
+Assets/Grace/script/ExportTerrain.cs
+ProjectSettings/AndroidResolverDependencies.xml
+*.xml
+ProjectSettings/AndroidResolverDependencies.xml
+ProjectSettings/AndroidResolverDependencies.xml
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/AndroidResolverDependencies.xml
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/Settings/URP-Performant.asset
+Assets/Settings/URP-HighFidelity.asset
+Assets/Settings/URP-Balanced.asset
+Assets/Resources/VuforiaConfiguration.asset
