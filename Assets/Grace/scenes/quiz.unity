@@ -312,22 +312,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8269155
+      value: 0.4990348
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8269155
+      value: 0.4990348
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8269155
+      value: 0.4990348
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.083
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
@@ -337,7 +337,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.093
+      value: 0.048
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b08b4b91882ac9149aefeb396cf2ec1d,
         type: 3}
@@ -1609,8 +1609,8 @@ Transform:
   m_GameObject: {fileID: 89429726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33, y: 0, z: 0.63}
-  m_LocalScale: {x: 0.7502315, y: 0.7502315, z: 0.7502315}
+  m_LocalPosition: {x: -0.122, y: 0, z: 0.63}
+  m_LocalScale: {x: 0.18360215, y: 0.18360215, z: 0.18360215}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1665262316}
@@ -5502,7 +5502,7 @@ GameObject:
   - component: {fileID: 280547195}
   - component: {fileID: 280547198}
   - component: {fileID: 280547197}
-  - component: {fileID: 280547196}
+  - component: {fileID: 280547199}
   m_Layer: 0
   m_Name: Mid Air Stage
   m_TagString: qn3w
@@ -5527,23 +5527,6 @@ Transform:
   - {fileID: 917825089}
   m_Father: {fileID: 1825113596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &280547196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280547194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1308684972, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 280547198}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: 
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 280547198}
 --- !u!114 &280547197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5608,7 +5591,24 @@ MonoBehaviour:
   mSelectedStageType: 1
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 280547196}
+  mPreview: {fileID: 280547199}
+--- !u!114 &280547199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280547194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308684972, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 280547198}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 280547198}
 --- !u!1001 &284234737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23194,8 +23194,8 @@ Transform:
   m_GameObject: {fileID: 770845892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33, y: 0, z: 0.63}
-  m_LocalScale: {x: 0.7502315, y: 0.7502315, z: 0.7502315}
+  m_LocalPosition: {x: -0.12200001, y: 0, z: 0.63}
+  m_LocalScale: {x: 0.18360215, y: 0.18360215, z: 0.18360215}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 804000082}
@@ -24601,7 +24601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusFilter: 1
+  StatusFilter: 0
   UsePoseSmoothing: 0
   AnimationCurve:
     serializedVersion: 2
@@ -26411,8 +26411,8 @@ Transform:
   m_GameObject: {fileID: 917825088}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.149, y: 0.044141, z: 0.091458}
-  m_LocalScale: {x: 0.6515019, y: 0.6515019, z: 0.6515019}
+  m_LocalPosition: {x: -0.088, y: 0.044141, z: 0.046458}
+  m_LocalScale: {x: 0.39317453, y: 0.39317453, z: 0.39317453}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1074052044}
@@ -26478,7 +26478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusFilter: 1
+  StatusFilter: 0
   UsePoseSmoothing: 0
   AnimationCurve:
     serializedVersion: 2
@@ -36240,7 +36240,7 @@ GameObject:
   - component: {fileID: 1126026965}
   - component: {fileID: 1126026968}
   - component: {fileID: 1126026967}
-  - component: {fileID: 1126026966}
+  - component: {fileID: 1126026969}
   m_Layer: 0
   m_Name: Mid Air Stage
   m_TagString: Untagged
@@ -36264,23 +36264,6 @@ Transform:
   - {fileID: 249642351}
   m_Father: {fileID: 702850413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1126026966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126026964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1308684972, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1126026968}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: 
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 1126026968}
 --- !u!114 &1126026967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36345,7 +36328,24 @@ MonoBehaviour:
   mSelectedStageType: 1
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 1126026966}
+  mPreview: {fileID: 1126026969}
+--- !u!114 &1126026969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126026964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308684972, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1126026968}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1126026968}
 --- !u!1 &1126368239
 GameObject:
   m_ObjectHideFlags: 0
@@ -37074,8 +37074,8 @@ Transform:
   m_GameObject: {fileID: 1149310033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.023}
+  m_LocalScale: {x: 0.77903, y: 0.77903, z: 0.77903}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 319760725}
@@ -47853,7 +47853,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 762887578}
+      - m_Target: {fileID: 1233755201}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -53658,7 +53658,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.0186}
-  m_LocalScale: {x: 0.72519493, y: 0.72519493, z: 0.72519493}
+  m_LocalScale: {x: 0.5521271, y: 0.5521271, z: 0.5521271}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 750894858}
