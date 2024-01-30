@@ -176,12 +176,13 @@ public class AuthManager : MonoBehaviour
     }
     public void SignOutUser()
     {
-        Debug.Log("sign out");
+        
         if (auth.CurrentUser != null)
         {
             auth.SignOut();
-
+            Debug.Log("sign out");
             loginpage.SetActive(true);
+            
             
 
         }
