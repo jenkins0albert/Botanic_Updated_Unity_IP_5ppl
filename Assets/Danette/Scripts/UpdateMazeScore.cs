@@ -16,30 +16,32 @@ using UnityEngine.SocialPlatforms.Impl;
 public class UpdateMazeScore : MonoBehaviour
 {
 
-    DatabaseReference dbPlayerStats;
-    DatabaseReference dbLeaderboard;
+    DatabaseReference dbPlayerStats; //Original firebase for user profiles
+    DatabaseReference dbLeaderboard; 
+
+    
 
     
     public void Awake()
     {
-        dbPlayerStats = FirebaseDatabase.DefaultInstance.GetReference("playerstatsmaze");
+        dbPlayerStats = FirebaseDatabase.DefaultInstance.GetReference("playerstatsmaze");//Calls the parent??
         dbLeaderboard = FirebaseDatabase.DefaultInstance.GetReference("leaderboardmaze");
 
     }
 
-    public void PlayerStatsUpdate(string uuid, string username, int score)
+    public void PlayerStatsUpdate(string uuid, string username, int score) 
     {
-        Query playerQuery = dbPlayerStats.Child(uuid);
+        Query playerQuery = dbPlayerStats.Child(uuid); //Make UUID appear and pair it with signed in user
 
         playerQuery.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
-            {
+            { // if error
                 Debug.Log("task unable to comeplete");
             }
             else if (task.IsCompleted)
             {
-                DataSnapshot stats = task.Result;
+                DataSnapshot stats = task.Result; //Read values from firebase
 
                 if (stats.Exists)
                 {
@@ -48,13 +50,13 @@ public class UpdateMazeScore : MonoBehaviour
 
                    
 
-                    dbPlayerStats.Child(uuid).SetRawJsonValueAsync(ms.MazeScoreToJson());
+                    dbPlayerStats.Child(uuid).SetRawJsonValueAsync(ms.MazeScoreToJson()); //update if got existing
                    //dbLeaderboard.Child(uuid).SetRawJsonValueAsync(lb.LeaderboardToJson());
                 }
 
                 else
                 {
-                    MazeScore ms = new MazeScore(username, score);
+                    MazeScore ms = new MazeScore(username, score); //otherwise make new record
                     dbPlayerStats.Child(uuid).SetRawJsonValueAsync(ms.MazeScoreToJson());
 
                     //Leaderboard lb = new Leaderboard(displayName, colonies);
