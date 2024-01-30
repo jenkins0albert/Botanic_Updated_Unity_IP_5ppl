@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEditor;
 
 public class ChangeMaze : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class ChangeMaze : MonoBehaviour
 
             //Firebase. Only item to insert is int Score
             //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
+            UpdateValueToFirebase(score);
 
         }
     }
@@ -60,6 +62,11 @@ public class ChangeMaze : MonoBehaviour
 
     public UpdateMazeScore UMSRef;
     
+    void UpdateValueToFirebase(int score)
+    {
+        UMSRef.PlayerStatsUpdate("uuid", "username", score); 
+
+    }
 
     public void StartCountdown() //Start timer
     {
