@@ -1342,13 +1342,13 @@ Transform:
   m_GameObject: {fileID: 170198412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1773.7701, y: -110.67617, z: -538.4158}
+  m_LocalPosition: {x: 0.1739502, y: -0.6289978, z: 2.393982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 826470686}
   - {fileID: 1452311319}
-  m_Father: {fileID: 1610753154}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &170198414
 MonoBehaviour:
@@ -1364,8 +1364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 170198416}
   mHiddenRoot: {fileID: 0}
-  mTargetName: --- EMPTY ---
-  mDatasetName: Vuforia/--- EMPTY ---.xml
+  mTargetName: gazebo
+  mDatasetName: Vuforia/Adrian_Targets.xml
   mCastedBehaviour: {fileID: 170198416}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -1428,13 +1428,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: --- EMPTY ---
+  mTrackableName: gazebo
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/--- EMPTY ---.xml
-  mAspectRatio: 1
+  mDataSetPath: Vuforia/Adrian_Targets.xml
+  mAspectRatio: 0.61
   mImageTargetType: 0
-  mWidth: 0.2
-  mHeight: 0.2
+  mWidth: 0.05
+  mHeight: 0.0305
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -26044,7 +26044,6 @@ Transform:
   - {fileID: 459641604}
   - {fileID: 1779391853}
   - {fileID: 322022688}
-  - {fileID: 170198413}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627772481
@@ -31937,6 +31936,7 @@ SceneRoots:
   - {fileID: 362426757}
   - {fileID: 1843646308}
   - {fileID: 1610753154}
+  - {fileID: 170198413}
   - {fileID: 482219201}
   - {fileID: 1754080869}
   - {fileID: 141618512}

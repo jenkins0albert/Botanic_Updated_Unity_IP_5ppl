@@ -578,7 +578,7 @@ MonoBehaviour:
   RuntimeCollider: 0
   mTrackableName: 562eb1755a8854eb4021ee11ab23b016
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Adrian_Targets.xml
+  mDataSetPath: Vuforia/Kesler_Targets.xml
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 0.2
@@ -619,7 +619,7 @@ MonoBehaviour:
   mObserverBehaviour: {fileID: 431165742}
   mHiddenRoot: {fileID: 0}
   mTargetName: 562eb1755a8854eb4021ee11ab23b016
-  mDatasetName: Vuforia/Adrian_Targets.xml
+  mDatasetName: Vuforia/Kesler_Targets.xml
   mCastedBehaviour: {fileID: 431165742}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -1599,10 +1599,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 936088694}
   m_HandleRect: {fileID: 2022869818}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.5
+  m_MaxValue: 3
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2196,8 +2196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974170e4dd7164948a19e966a3b02430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScaleSlider: {fileID: 0}
-  currentScale: 0.1
+  ScaleSlider: {fileID: 1008086059}
+  currentScale: 0.5
 --- !u!114 &1589042121
 MonoBehaviour:
   m_ObjectHideFlags: 0
