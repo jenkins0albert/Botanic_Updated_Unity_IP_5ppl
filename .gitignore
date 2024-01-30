@@ -297,3 +297,10 @@ ProjectSettings/AndroidResolverDependencies.xml
 *.xml
 ProjectSettings/AndroidResolverDependencies.xml
 ProjectSettings/AndroidResolverDependencies.xml
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/AndroidResolverDependencies.xml
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/Settings/URP-Performant.asset
+Assets/Settings/URP-HighFidelity.asset
+Assets/Settings/URP-Balanced.asset
+Assets/Resources/VuforiaConfiguration.asset
