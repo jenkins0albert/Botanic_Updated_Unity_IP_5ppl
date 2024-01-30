@@ -5,7 +5,7 @@ using UnityEngine;
 using Vuforia;
 using Lean.Touch;
 using TMPro;
-using UnityEngine.UI;
+using Unity.UI;
 
 public class BallShooter : MonoBehaviour
 {
@@ -43,23 +43,23 @@ public class BallShooter : MonoBehaviour
         int randomIndex = UnityEngine.Random.Range(0, ballPrefabs.Length);
 
         //Instantiate a new projectile at the throw point with the randomly selected prefab
-        GameObject ball = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
+        GameObject projectile = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
 
         //Call ShootBall function
-        ShootBall(ball);
+        ShootBall(projectile);
 
         //To ensure function is carried out
         Debug.Log("Instantiated ball func working");
     }
 
-    public void ShootBall(GameObject ball)
+    public void ShootBall(GameObject projectile)
     {
 
         //Calculate the throw direction based on the AR camera's forward direction
         Vector3 throwDirection = Camera.main.transform.forward;
 
         //Apply force to the basketball based on the calculated throw direction
-        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
 
         //Testing shooting
