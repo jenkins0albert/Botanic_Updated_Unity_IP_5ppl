@@ -502,9 +502,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 252204275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa570a6fe585b54095af4656cbf75b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 43cc4983ac423fd46b71434db9ee4e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mymixer: {fileID: 24100000, guid: 1f1b214c6f8132743b222dd086f3e752, type: 2}
+  musicAdjust: {fileID: 691409978}
 --- !u!114 &252204281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,9 +516,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 252204275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811536b359c1e0a4782462d0ddc954fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 19a0f110043dc57458a6be4637a198a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Url: 
 --- !u!1 &349368400
 GameObject:
   m_ObjectHideFlags: 0

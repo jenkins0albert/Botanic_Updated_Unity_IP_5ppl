@@ -64,7 +64,7 @@ public class ChangeMaze : MonoBehaviour
     
     void UpdateValueToFirebase(int score)
     {
-        UMSRef.PlayerStatsUpdate("uuid", "username", score); 
+        UMSRef.PlayerStatsUpdate("uuid", "username", score, score); 
 
     }
 

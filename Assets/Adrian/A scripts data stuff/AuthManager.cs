@@ -32,16 +32,18 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField EmailFieldLogin;
     public TMP_InputField PasswordFieldLogin;
 
+    public TMP_InputField ForgotPassField;
     public DatabaseReference mDatabaseRef;
 
 
 
-    public GameObject createAccBtn;
+    
 
     public GameObject loginpage;
 
     public TextMeshProUGUI signuperror;
     public TextMeshProUGUI loginerror;
+    public TextMeshProUGUI passwordchangeerror;
 
     public void SignUp()
     {
@@ -165,6 +167,7 @@ public class AuthManager : MonoBehaviour
     {
         loginerror.text = "";
         signuperror.text = "";
+        passwordchangeerror.text = "";
     }
 
 
@@ -212,6 +215,30 @@ public class AuthManager : MonoBehaviour
         
         
     }
+
+    public void ForgetPassword()
+    {
+        string fpemail = ForgotPassField.text.Trim();
+
+        auth.SendPasswordResetEmailAsync(fpemail).ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                //Debug.LogError("ERROR: " + task.Exception);
+                passwordchangeerror.text = "Invalid Email";
+                passwordchangeerror.color = Color.red;
+            }
+            else if (task.IsCompleted)
+            {
+                Debug.Log("Password reset sent");
+                passwordchangeerror.text = "Email Sent";
+                passwordchangeerror.color = Color.white;
+            }
+
+        });
+    }
+
+
     // Start is called before the first frame update
     void Awake()
     {
