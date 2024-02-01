@@ -10,12 +10,15 @@ public class RoofCollide : MonoBehaviour
     public GameObject roofgroundplane;
     public AudioSource buildsound;
 
+    public GameObject cancelbtn;
+    public AnimationPlayer uianim;
+
     public TapInteractions tap;
 
     public ParticleSystem buildeffectroof;
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "roofdrag")
+        if (other.gameObject.tag == "roofdrag")
         {
             greyedoutroof.SetActive(false);
             roof.SetActive(true);
@@ -23,6 +26,8 @@ public class RoofCollide : MonoBehaviour
             buildsound.Play();
             Debug.Log("roof");
             buildeffectroof.Play();
+            cancelbtn.SetActive(false);
+            uianim.OpenUI();
             tap.count += 1;
 
         }
