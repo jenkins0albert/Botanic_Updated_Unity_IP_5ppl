@@ -95,6 +95,7 @@ public class AuthManager : MonoBehaviour
             //perform task handling
             if (task.IsFaulted || task.IsCanceled)
             {
+                
                 Debug.Log("Sorry, there was an error creating your new account, ERROR: " + task.Exception);
                 Debug.Log("error");
                 signuperror.color = Color.red;
@@ -146,11 +147,13 @@ public class AuthManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
+
+                
                 Firebase.Auth.AuthResult newPlayer = task.Result;
                 Debug.LogFormat("Welcome to Ant Farm Simulator {0}", newPlayer.User.UserId);
 
                 Debug.Log("signed in");
-                
+                nextSceneAnimation.FadeToMenu();
 
                 //do anything you want after player creation eg. create new player
 
@@ -216,7 +219,7 @@ public class AuthManager : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
 
-        DontDestroyOnLoad(this.gameObject);
+        
 
 
     }

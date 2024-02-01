@@ -24,7 +24,7 @@ public class LogOut : MonoBehaviour
             Debug.Log("sign out");
 
 
-            nextSceneAnimation.FadeToMenu();
+            nextSceneAnimation.FadeToLevel1();
 
         }
 
@@ -33,6 +33,17 @@ public class LogOut : MonoBehaviour
             Debug.Log("no user");
         }
 
+
+
+    }
+
+    void Awake()
+    {
+
+        auth = FirebaseAuth.DefaultInstance;
+        
+
+        
 
 
     }

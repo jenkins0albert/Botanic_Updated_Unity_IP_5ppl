@@ -12,7 +12,8 @@ public class BallShooter : MonoBehaviour
     //Declare variables
     public GameObject[] ballPrefabs;
     public Transform throwPoint;
-    public float throwForce = 0.1f;
+    public float minThrowForce = 0.1f;
+    public float maxThrowForce = 5f;
 
     public VirtualButtonBehaviour vB;
 
@@ -27,14 +28,7 @@ public class BallShooter : MonoBehaviour
 
     void Update()
     {
-        /*
-        //Check for touch input
-        if (LeanTouch.Fingers.Count > 0 && LeanTouch.Fingers[0].Up)
-        {
-            //To ensure function is carried out
-            Debug.Log("Touch input ok");
-        }
-        */
+        
     }
 
     public void InstantiateBall(/*VirtualButtonBehaviour vb*/)
@@ -45,14 +39,41 @@ public class BallShooter : MonoBehaviour
         //Instantiate a new projectile at the throw point with the randomly selected prefab
         GameObject projectile = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
 
-        //Call ShootBall function
-        ShootBall(projectile);
+        //Call ThrowForce function
+        if (LeanTouch.Fingers.Count > 0 && LeanTouch.Fingers[0].Up)
+        {
+            CalculateThrowForce(LeanTouch.Fingers[0]);
+            //To ensure function is carried out
+            Debug.Log("Touch input ok");
+        }
 
         //To ensure function is carried out
         Debug.Log("Instantiated ball func working");
     }
 
-    public void ShootBall(GameObject projectile)
+    void CalculateThrowForce(LeanFinger finger)
+    {
+        // Calculate the throw direction based on the AR camera's forward direction
+        Vector3 throwDirection = Camera.main.transform.forward;
+
+        // Calculate the throw force based on the finger's swipe delta position
+        float swipeDeltaMagnitude = finger.SwipeScreenDelta.magnitude;
+        float normalizedDeltaMagnitude = Mathf.Clamp01(swipeDeltaMagnitude / Screen.width);
+        float calculatedThrowForce = Mathf.Lerp(minThrowForce, maxThrowForce, normalizedDeltaMagnitude);
+
+        // Instantiate a new projectile at the throw point with a randomly selected prefab
+        int randomIndex = UnityEngine.Random.Range(0, ballPrefabs.Length);
+        GameObject projectile = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
+
+        // Apply force to the projectile based on the calculated throw direction and force
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.AddForce(throwDirection * calculatedThrowForce, ForceMode.Impulse);
+
+        // Debug the calculated throw force
+        Debug.Log("Calculated Throw Force: " + calculatedThrowForce);
+    }
+
+    /*public void ShootBall(GameObject projectile)
     {
 
         //Calculate the throw direction based on the AR camera's forward direction
@@ -66,10 +87,10 @@ public class BallShooter : MonoBehaviour
         /*GameObject ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
         Rigidbody rb = ball.GetComponent<Rigidbody>();
         // Apply a force to shoot the ball
-        rb.AddForce(transform.forward * 0.1f, ForceMode.Impulse);*/
+        rb.AddForce(transform.forward * 0.1f, ForceMode.Impulse);
 
         //To ensure function is carried out
         Debug.Log("Shoot Ball func working");
 
-    }
+    }*/
 }
