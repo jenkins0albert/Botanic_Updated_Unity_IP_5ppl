@@ -1,3 +1,8 @@
+/*
+ * Author: Bhoomika Manot
+ * Date: 18/1/2024
+ * Description: Code for throwing the recycle items into the various bins. 
+ */
 using System.Collections;
 using System.Collections.Generic;
 using System;
