@@ -12,16 +12,23 @@ public class FloorCollide : MonoBehaviour
 
     public ParticleSystem buildeffectfloor;
 
+    public GameObject cancelbtn;
+    public AnimationPlayer uianim;
+
     public TapInteractions tap;
-    public void OnCollisionEnter(Collision collision)
+
+   
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "floordrag")
+        if (other.gameObject.tag == "floordrag")
         {
             greyedoutfloor.SetActive(false);
             floor.SetActive(true);
             floorgroundplane.SetActive(false);
             buildsound.Play();
             buildeffectfloor.Play();
+            cancelbtn.SetActive(false);
+            uianim.OpenUI();
             Debug.Log("floor");
 
             tap.count += 1;
