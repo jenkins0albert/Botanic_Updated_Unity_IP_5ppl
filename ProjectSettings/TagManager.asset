@@ -8,6 +8,21 @@ TagManager:
   - Maze2
   - Maze3
   - Bingo
+  - qn2w
+  - qn3w
+  - qn5c
+  - qn1c
+  - qn2c
+  - qn4c
+  - qn5w
+  - qn1w
+  - qn4w
+  - qn3c
+  - Projectile
+  - RB1
+  - RB2
+  - P1
+  - P2
   layers:
   - Default
   - TransparentFX

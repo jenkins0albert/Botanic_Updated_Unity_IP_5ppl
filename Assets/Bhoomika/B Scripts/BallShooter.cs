@@ -19,16 +19,15 @@ public class BallShooter : MonoBehaviour
     public Transform throwPoint;
     public float minThrowForce = 0.1f;
     public float maxThrowForce = 5f;
+    private GameObject projectile;
 
-    public VirtualButtonBehaviour vB;
+    //public VirtualButtonBehaviour vB;
 
     void Start()
     {
         //To ensure script is working
         Debug.Log("Ball Mngr script working");
 
-        //Virtual Button OnClick()
-        //vB.RegisterOnButtonPressed(InstantiateBall);
     }
 
     void Update()
@@ -36,7 +35,7 @@ public class BallShooter : MonoBehaviour
         
     }
 
-    public void InstantiateBall(/*VirtualButtonBehaviour vb*/)
+    public void InstantiateBall()
     {
         //Get a random index from the ballPrefabs array
         int randomIndex = UnityEngine.Random.Range(0, ballPrefabs.Length);
@@ -78,24 +77,5 @@ public class BallShooter : MonoBehaviour
         Debug.Log("Calculated Throw Force: " + calculatedThrowForce);
     }
 
-    /*public void ShootBall(GameObject projectile)
-    {
-
-        //Calculate the throw direction based on the AR camera's forward direction
-        Vector3 throwDirection = Camera.main.transform.forward;
-
-        //Apply force to the basketball based on the calculated throw direction
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
-
-        //Testing shooting
-        /*GameObject ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
-        Rigidbody rb = ball.GetComponent<Rigidbody>();
-        // Apply a force to shoot the ball
-        rb.AddForce(transform.forward * 0.1f, ForceMode.Impulse);
-
-        //To ensure function is carried out
-        Debug.Log("Shoot Ball func working");
-
-    }*/
+    
 }
