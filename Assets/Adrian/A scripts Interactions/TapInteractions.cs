@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using JetBrains.Annotations;
 
 public class TapInteractions : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class TapInteractions : MonoBehaviour
     public GameObject buildthing;
     public ParticleSystem build;
 
+    public GameObject fence;
+    public GameObject roof;
+    public GameObject floor;
 
     public GameObject Streamer;
     public bool streamerbool = false;
@@ -73,6 +77,14 @@ public class TapInteractions : MonoBehaviour
 
         }
 
+    }
+    public void ResetBuild()
+    {
+        transform.localPosition = new Vector3(0, 0, 0);
+
+        fence.transform.localPosition = new Vector3(0, 0, 0);
+        roof.transform.localPosition = new Vector3(0, 0, 0);
+        floor.transform.localPosition = new Vector3(0, 0, 0);
     }
 
 

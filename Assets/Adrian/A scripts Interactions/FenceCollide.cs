@@ -12,18 +12,23 @@ public class FenceCollide : MonoBehaviour
 
     public ParticleSystem buildeffectfence;
 
+    public GameObject cancelbtn;
+    public AnimationPlayer uianim;
+
 
     public TapInteractions tap;
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "fencedrag")
+        if(other.gameObject.tag == "fencedrag")
         {
             greyedoutfence.SetActive(false);
             fence.SetActive(true);
             fencegroundplane.SetActive(false);
             buildsound.Play();
             buildeffectfence.Play();
+            cancelbtn.SetActive(false);
+            uianim.OpenUI();
             Debug.Log("fence");
 
             tap.count += 1;
