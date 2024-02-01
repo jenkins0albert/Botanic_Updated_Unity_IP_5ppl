@@ -14,8 +14,8 @@ using UnityEngine.UI;
 public class PickUp : MonoBehaviour
 {
     //Declare variables
-    public GameObject recycleSpawn;
-    public int maxObjectsToSpawn = 10;
+    public GameObject[] recycleSpawn;
+    public int maxObjectsToSpawn = 7;
     private bool hasSpawned = false;
     //public int countObjs = 0;
 
@@ -26,11 +26,20 @@ public class PickUp : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject startPage;
     public GameObject endPage;
+    public GameObject timePage;
 
     void Start()
     {
         //Start timer text
         timerText.text = "Time: 10s";
+    }
+
+    void SetActiveObj()
+    {
+        foreach (GameObject obj in recycleSpawn)
+        {
+            obj.SetActive(true);
+        }
     }
 
     public void StartSpawning()
@@ -47,6 +56,9 @@ public class PickUp : MonoBehaviour
 
     IEnumerator Spawner()
     {
+        //Set active prefabs
+        SetActiveObj();
+
         //To allow spawning only once
         hasSpawned = true;
 
@@ -65,8 +77,10 @@ public class PickUp : MonoBehaviour
             //Checks if all objets are spawned, if not instantiate
             if (spawnedObjectCount < maxObjectsToSpawn)
             {
+                int randomIndex = UnityEngine.Random.Range(0, recycleSpawn.Length);
+
                 //Instantiate the object at the random position
-                Instantiate(recycleSpawn, randomPosition, Quaternion.identity, transform);
+                GameObject items = Instantiate(recycleSpawn[randomIndex], randomPosition, Quaternion.identity, transform);
                 spawnedObjectCount++;
             }
            
@@ -89,6 +103,8 @@ public class PickUp : MonoBehaviour
         if (elapsedTime >= totalTime)
         {
             endPage.gameObject.SetActive(true);
+            timePage.gameObject.SetActive(false);
+
         }
 
         //hasSpawned = false;
