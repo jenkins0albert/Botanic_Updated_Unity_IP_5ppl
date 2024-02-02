@@ -129,6 +129,11 @@ public class PickUp : MonoBehaviour
         tappedObject.gameObject.SetActive(false);
         
     }
+
+    /*public void Debugging()
+    {
+        Debug.Log(countObjs);
+    }*/
 }
 
 
