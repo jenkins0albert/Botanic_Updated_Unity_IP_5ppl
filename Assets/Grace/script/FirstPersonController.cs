@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public float moveSpeed = 0.28f;
+    public float moveSpeed = 6f;
     /// <summary>
     /// this is the players camera
     /// </summary>
@@ -40,7 +40,7 @@ public class FirstPersonController : MonoBehaviour
                 else
                 {
                     /// Move the player based on touching the right side
-                    Vector3 moveDirection = new Vector3(touch.deltaPosition.x, 0, touch.deltaPosition.y);
+                    Vector3 moveDirection = new Vector3(touch.deltaPosition.x, 0, touch.deltaPosition.y).normalized;
                     /// Convert the movement direction based on the camera's orientation
                     moveDirection = mainCamera.transform.TransformDirection(moveDirection);
                     ///player at same height and does not do any funny tilting or moving
