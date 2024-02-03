@@ -55,7 +55,7 @@ public class BallShooter : MonoBehaviour
         Debug.Log("Instantiated ball func working");
     }
 
-    void CalculateThrowForce(LeanFinger finger)
+    public void CalculateThrowForce(LeanFinger finger)
     {
         // Calculate the throw direction based on the AR camera's forward direction
         Vector3 throwDirection = Camera.main.transform.forward;
@@ -76,6 +76,8 @@ public class BallShooter : MonoBehaviour
         // Debug the calculated throw force
         Debug.Log("Calculated Throw Force: " + calculatedThrowForce);
     }
+
+    //public string projectileTag = "Projectile";
 
     
 }

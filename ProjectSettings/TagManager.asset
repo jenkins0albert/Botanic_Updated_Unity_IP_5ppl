@@ -20,9 +20,9 @@ TagManager:
   - qn3c
   - Projectile
   - RB1
-  - RB2
-  - P1
-  - P2
+  - floordrag
+  - roofdrag
+  - fencedrag
   layers:
   - Default
   - TransparentFX
