@@ -14,70 +14,89 @@ using UnityEngine.UI;
 
 public class BallShooter : MonoBehaviour
 {
-    //Declare variables
     public GameObject[] ballPrefabs;
     public Transform throwPoint;
     public float minThrowForce = 0.1f;
     public float maxThrowForce = 5f;
     private GameObject projectile;
 
-    //public VirtualButtonBehaviour vB;
+    public GameObject timerPanel;
+    public TextMeshProUGUI timerText;
+    public GameObject end;
+
+    private float timerDuration = 20f;
+    private float currentTime;
+    private bool timerStarted = false;
 
     void Start()
     {
-        //To ensure script is working
         Debug.Log("Ball Mngr script working");
-
     }
 
     void Update()
     {
-        
+        UpdateTimerText();
     }
 
     public void InstantiateBall()
     {
-        //Get a random index from the ballPrefabs array
-        int randomIndex = UnityEngine.Random.Range(0, ballPrefabs.Length);
-
-        //Instantiate a new projectile at the throw point with the randomly selected prefab
-        GameObject projectile = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
-
-        //Call ThrowForce function
-        if (LeanTouch.Fingers.Count > 0 && LeanTouch.Fingers[0].Up)
+        if (!timerStarted) // Check if the timer hasn't started yet
         {
-            CalculateThrowForce(LeanTouch.Fingers[0]);
-            //To ensure function is carried out
-            Debug.Log("Touch input ok");
+            StartCoroutine(StartTimer());
+            timerStarted = true; // Set the flag to indicate that the timer has started
         }
 
-        //To ensure function is carried out
-        Debug.Log("Instantiated ball func working");
+        if (currentTime > 0)
+        {
+            timerPanel.gameObject.SetActive(true);
+
+            int randomIndex = UnityEngine.Random.Range(0, ballPrefabs.Length);
+            projectile = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
+
+            if (Lean.Touch.LeanTouch.Fingers.Count > 0 && Lean.Touch.LeanTouch.Fingers[0].Up)
+            {
+                CalculateThrowForce(Lean.Touch.LeanTouch.Fingers[0]);
+                Debug.Log("Touch input ok");
+            }
+
+            Debug.Log("Instantiated ball func working");
+        }
+        else
+        {
+            Debug.Log("Timer expired. Cannot instantiate more balls.");
+            timerPanel.gameObject.SetActive(false);
+        }
     }
 
-    public void CalculateThrowForce(LeanFinger finger)
+    private void CalculateThrowForce(Lean.Touch.LeanFinger finger)
     {
-        // Calculate the throw direction based on the AR camera's forward direction
         Vector3 throwDirection = Camera.main.transform.forward;
-
-        // Calculate the throw force based on the finger's swipe delta position
         float swipeDeltaMagnitude = finger.SwipeScreenDelta.magnitude;
         float normalizedDeltaMagnitude = Mathf.Clamp01(swipeDeltaMagnitude / Screen.width);
         float calculatedThrowForce = Mathf.Lerp(minThrowForce, maxThrowForce, normalizedDeltaMagnitude);
 
-        // Instantiate a new projectile at the throw point with a randomly selected prefab
-        int randomIndex = UnityEngine.Random.Range(0, ballPrefabs.Length);
-        GameObject projectile = Instantiate(ballPrefabs[randomIndex], throwPoint.position, Quaternion.identity);
-
-        // Apply force to the projectile based on the calculated throw direction and force
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.AddForce(throwDirection * calculatedThrowForce, ForceMode.Impulse);
 
-        // Debug the calculated throw force
         Debug.Log("Calculated Throw Force: " + calculatedThrowForce);
     }
 
-    //public string projectileTag = "Projectile";
+    IEnumerator StartTimer()
+    {
+        currentTime = timerDuration; // Reset the timer duration
+        while (currentTime > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            currentTime--;
+            UpdateTimerText();
+        }
 
-    
+        //Set Active Panel
+        //end.gameObject.SetActive(true);
+    }
+
+    private void UpdateTimerText()
+    {
+        timerText.text = "Time: " + currentTime.ToString("F0");
+    }
 }
