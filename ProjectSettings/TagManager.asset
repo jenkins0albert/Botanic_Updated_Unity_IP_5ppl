@@ -24,6 +24,9 @@ TagManager:
   - Metal
   - Paper
   - Bottle
+  - Maze1ALL
+  - Maze2ALL
+  - Maze3ALL
   layers:
   - Default
   - TransparentFX

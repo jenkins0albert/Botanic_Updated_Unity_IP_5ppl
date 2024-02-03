@@ -14,9 +14,9 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze1;
     public GameObject Maze2;
     public GameObject Maze3;
-    public GameObject Maze1Trigger;
-    public GameObject Maze2Trigger;
-    public GameObject Maze3Trigger;
+    //public GameObject Maze1Trigger;
+    //public GameObject Maze2Trigger;
+    //public GameObject Maze3Trigger;
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
