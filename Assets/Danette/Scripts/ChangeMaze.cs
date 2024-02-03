@@ -38,7 +38,7 @@ public class ChangeMaze : MonoBehaviour
         {
             //Stop timer, send to FB
             StopCountdown();
-            canvasPanelENDWin.SetActive(true); //Show Win UI !
+            canvasPanelENDLose.SetActive(true); //Show Win UI !
             int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
 
             //Firebase. Only item to insert is int Score
