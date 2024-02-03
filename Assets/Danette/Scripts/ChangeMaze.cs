@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEditor;
+using System.Xml.Linq;
 
 public class ChangeMaze : MonoBehaviour
 {
@@ -14,27 +15,29 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze1;
     public GameObject Maze2;
     public GameObject Maze3;
-    //public GameObject Maze1Trigger;
-    //public GameObject Maze2Trigger;
-    //public GameObject Maze3Trigger;
+    public GameObject Maze1Trigger;
+    public GameObject Maze2Trigger;
+    public GameObject Maze3Trigger;
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Maze1"))
+        if (other.CompareTag("Bingo"))
+        {
+            if (other.gameObject == Maze1Trigger)
         {
             Maze1.SetActive(false);
             Maze2.SetActive(true);
             Maze3.SetActive(false);
         }
-        else if(other.CompareTag("Maze2"))
+            else if(other.gameObject == Maze2Trigger)
         {
             Maze1.SetActive(false);
             Maze2.SetActive(false);
             Maze3.SetActive(true);
         }
-        else if (other.CompareTag("Maze3"))
+            else if (other.gameObject == Maze3Trigger)
         {
             //Stop timer, send to FB
             StopCountdown();
@@ -46,6 +49,8 @@ public class ChangeMaze : MonoBehaviour
             UpdateValueToFirebase(score);
 
         }
+        }
+        
     }
 
 
@@ -60,6 +65,11 @@ public class ChangeMaze : MonoBehaviour
     public GameObject canvasPanelSTART; //Start version of UI
     public GameObject canvasPanelENDLose; // End (Lose)Version of UI
     public GameObject canvasPanelENDWin; // End (Win)Version of UI
+    public GameObject Bingo1;
+    public GameObject Bingo2;
+    public GameObject Bingo3;
+
+    public GameObject OGSPOT;
 
     public UpdateMazeScore UMSRef;
     
@@ -88,12 +98,23 @@ public class ChangeMaze : MonoBehaviour
         
     }
 
+    public void PlaceObjectAtPosition()
+    {
+        // Set the position of objectA to match the position of objectB
+        Bingo1.transform.position = OGSPOT.transform.position;
+        Bingo2.transform.position = OGSPOT.transform.position;
+        Bingo3.transform.position = OGSPOT.transform.position;
 
-// Start is called before the first frame update
+    }
+
+
+    // Start is called before the first frame update
     void Start()
     {
         startButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         startButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
+        //startButton.onClick.AddListener(PlaceObjectAtPosition);//Hide Canvas and show Maze1 Only
+       // restartButton.onClick.AddListener(PlaceObjectAtPosition);//Hide Canvas and show Maze1 Only
         restartButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         restartButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
     }

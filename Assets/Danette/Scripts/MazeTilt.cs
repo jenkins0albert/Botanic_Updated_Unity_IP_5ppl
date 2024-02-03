@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MazeTilt : MonoBehaviour
 {
-    public float tiltSpeed = 5f;
+    public float tiltSpeed = 100f;
     void Update()
     {
         float tiltX = Input.acceleration.x * tiltSpeed;
