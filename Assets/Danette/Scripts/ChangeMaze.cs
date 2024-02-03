@@ -54,7 +54,8 @@ public class ChangeMaze : MonoBehaviour
     //=============TIMER SCRIPT=========================
     public TextMeshProUGUI TimerText; //Display Time text
     public Button startButton; //Start timer countdown
-    public float countdownTime = 60f; //Timer = 60 seconds
+    public Button restartButton;
+    public float countdownTime = 100f; //Timer = x seconds
     private bool isCountingDown = false;
     public GameObject canvasPanelSTART; //Start version of UI
     public GameObject canvasPanelENDLose; // End (Lose)Version of UI
@@ -70,7 +71,7 @@ public class ChangeMaze : MonoBehaviour
 
     public void StartCountdown() //Start timer
     {
-        countdownTime = 60f; //reset timer time
+        countdownTime = 100f; //reset timer time
         isCountingDown = true;
     }
 
@@ -93,6 +94,8 @@ public class ChangeMaze : MonoBehaviour
     {
         startButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         startButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
+        restartButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
+        restartButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
     }
 
     // Update is called once per frame
