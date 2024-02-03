@@ -18,11 +18,12 @@ TagManager:
   - qn1w
   - qn4w
   - qn3c
-  - Projectile
-  - RB1
   - floordrag
   - roofdrag
   - fencedrag
+  - Metal
+  - Paper
+  - Bottle
   layers:
   - Default
   - TransparentFX

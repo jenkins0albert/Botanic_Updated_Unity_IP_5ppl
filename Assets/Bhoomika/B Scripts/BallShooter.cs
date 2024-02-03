@@ -64,7 +64,6 @@ public class BallShooter : MonoBehaviour
         else
         {
             Debug.Log("Timer expired. Cannot instantiate more balls.");
-            timerPanel.gameObject.SetActive(false);
         }
     }
 
@@ -91,8 +90,11 @@ public class BallShooter : MonoBehaviour
             UpdateTimerText();
         }
 
-        //Set Active Panel
-        //end.gameObject.SetActive(true);
+        //Set active panel
+        end.gameObject.SetActive(true);
+
+        //Set inactive timer
+        timerPanel.gameObject.SetActive(false);
     }
 
     private void UpdateTimerText()
