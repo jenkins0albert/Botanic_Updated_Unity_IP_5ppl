@@ -21,23 +21,23 @@ public class ChangeMaze : MonoBehaviour
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Bingo"))
+        if (collision.gameObject.CompareTag(bingoTag))
         {
-            if (other.gameObject == Maze1Trigger)
+            if (collision.gameObject == Maze1Trigger)
         {
             Maze1.SetActive(false);
             Maze2.SetActive(true);
             Maze3.SetActive(false);
         }
-            else if(other.gameObject == Maze2Trigger)
+            else if(collision.gameObject == Maze2Trigger)
         {
             Maze1.SetActive(false);
             Maze2.SetActive(false);
             Maze3.SetActive(true);
         }
-            else if (other.gameObject == Maze3Trigger)
+            else if (collision.gameObject == Maze3Trigger)
         {
             //Stop timer, send to FB
             StopCountdown();
