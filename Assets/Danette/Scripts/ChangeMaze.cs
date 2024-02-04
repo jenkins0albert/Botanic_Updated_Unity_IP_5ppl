@@ -113,10 +113,13 @@ public class ChangeMaze : MonoBehaviour
     {
         startButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         startButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
-        //startButton.onClick.AddListener(PlaceObjectAtPosition);//Hide Canvas and show Maze1 Only
-       // restartButton.onClick.AddListener(PlaceObjectAtPosition);//Hide Canvas and show Maze1 Only
         restartButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         restartButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
+
+        //startButton.onClick.AddListener(PlaceObjectAtPosition);
+        // restartButton.onClick.AddListener(PlaceObjectAtPosition);
+
+        
     }
 
     // Update is called once per frame
