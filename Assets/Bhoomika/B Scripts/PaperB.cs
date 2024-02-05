@@ -14,16 +14,17 @@ using UnityEngine.UI;
 
 public class PaperB : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        // Check if the colliding object has a specific tag, or use other criteria as needed
-        if (collision.gameObject.CompareTag("Paper"))
+        // Check if the triggering object has a specific tag, or use other criteria as needed
+        if (other.CompareTag("Paper"))
         {
-            Destroy(collision.gameObject); // Destroy the collided object
-            Debug.Log("Destroyed on collision");
+            Destroy(other.gameObject); // Destroy the triggered object
+            Debug.Log("Destroyed on trigger");
         }
         else
         {
+            Destroy(other.gameObject); // Destroy the triggered object
             Debug.Log("Wrong, paper should be here");
         }
     }
