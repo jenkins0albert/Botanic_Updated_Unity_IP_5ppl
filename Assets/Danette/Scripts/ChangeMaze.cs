@@ -18,6 +18,7 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze1Trigger;
     public GameObject Maze2Trigger;
     public GameObject Maze3Trigger;
+    public TextMeshProUGUI finalScoreText;
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
@@ -31,7 +32,7 @@ public class ChangeMaze : MonoBehaviour
                 Debug.Log("Maze changed 1");
         }
 
-        if(collision.gameObject == Maze2Trigger)
+        if(collision.gameObject.CompareTag("Maze2"))
         {
             Maze1.SetActive(false);
             Maze2.SetActive(false);
@@ -39,16 +40,18 @@ public class ChangeMaze : MonoBehaviour
                 Debug.Log("Maze changed 2");
             }
 
-        if (collision.gameObject == Maze3Trigger)
+        if (collision.gameObject.CompareTag("Maze3"))
         {
             //Stop timer, send to FB
             StopCountdown();
             canvasPanelENDWin.SetActive(true); //Show Win UI !
-            int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
+            finalScoreText.text = TimerText.text;
+            TimerTextCanvas.SetActive(false);
+           // int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
                 Debug.Log("Maze1 end");
             //Firebase. Only item to insert is int Score
             //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
-            UpdateValueToFirebase(score);
+            //UpdateValueToFirebase(score);
 
         }
         
@@ -70,6 +73,7 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Bingo1;
     public GameObject Bingo2;
     public GameObject Bingo3;
+    public GameObject TimerTextCanvas;
 
     public GameObject OGSPOT;
 

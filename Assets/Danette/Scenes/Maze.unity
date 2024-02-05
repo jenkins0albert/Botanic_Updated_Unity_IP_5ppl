@@ -851,7 +851,7 @@ Transform:
   m_GameObject: {fileID: 381841568}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0103, z: 0}
   m_LocalScale: {x: 0.10578, y: 0, z: 0.10578}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -872,7 +872,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1192,16 +1192,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503523473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.4263482, y: 3.4263482, z: 3.4263482}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1440572135}
+  m_Father: {fileID: 853428569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 863}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &503523475
@@ -1488,7 +1488,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6563070680447374279, guid: 99b4c9eb4e34fb34b8514d2c26dc02d4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2393,8 +2394,8 @@ Transform:
   m_GameObject: {fileID: 841774973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8564851, y: 0.01079071, z: 0.8732}
-  m_LocalScale: {x: -0.054971617, y: -0.054971617, z: -0.054971617}
+  m_LocalPosition: {x: -0.8625, y: 0.0291, z: 0.875}
+  m_LocalScale: {x: -0.039909393, y: -0.039909393, z: -0.039909393}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1167141420}
@@ -2509,7 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a2ce53b9d967648942d1b2ff9519b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 100
   upButton: {fileID: 675620296242676075}
   downButton: {fileID: 748825405}
   leftButton: {fileID: 961509465}
@@ -2533,6 +2534,7 @@ MonoBehaviour:
   Maze1Trigger: {fileID: 5960633906916177680}
   Maze2Trigger: {fileID: 381841568}
   Maze3Trigger: {fileID: 1477782584}
+  finalScoreText: {fileID: 63322188}
   TimerText: {fileID: 503523475}
   startButton: {fileID: 1574723790}
   restartButton: {fileID: 264539597}
@@ -2543,8 +2545,45 @@ MonoBehaviour:
   Bingo1: {fileID: 1017748641}
   Bingo2: {fileID: 841774973}
   Bingo3: {fileID: 1586164650}
+  TimerTextCanvas: {fileID: 63322186}
   OGSPOT: {fileID: 687603287}
   UMSRef: {fileID: 0}
+--- !u!1 &853428568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853428569}
+  m_Layer: 5
+  m_Name: TimerTextCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &853428569
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853428568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 503523474}
+  m_Father: {fileID: 1440572135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 863}
+  m_SizeDelta: {x: 685.26965, y: 171.31738}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &915756070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,7 +3202,7 @@ Transform:
   m_GameObject: {fileID: 1017748641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.418, y: 0.0265, z: 0.445}
+  m_LocalPosition: {x: -0.4106, y: 0.0265, z: 0.444}
   m_LocalScale: {x: -0.03874415, y: -0.03874415, z: -0.03874415}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3232,6 +3271,7 @@ MonoBehaviour:
   Maze1Trigger: {fileID: 5960633906916177680}
   Maze2Trigger: {fileID: 381841568}
   Maze3Trigger: {fileID: 1477782584}
+  finalScoreText: {fileID: 63322188}
   TimerText: {fileID: 503523475}
   startButton: {fileID: 1574723790}
   restartButton: {fileID: 264539597}
@@ -3242,6 +3282,7 @@ MonoBehaviour:
   Bingo1: {fileID: 1017748641}
   Bingo2: {fileID: 841774973}
   Bingo3: {fileID: 1586164650}
+  TimerTextCanvas: {fileID: 63322186}
   OGSPOT: {fileID: 687603287}
   UMSRef: {fileID: 0}
 --- !u!65 &1017748650
@@ -3893,7 +3934,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2059553147246938138}
-  - {fileID: 503523474}
+  - {fileID: 853428569}
   - {fileID: 762863971}
   - {fileID: 838546251}
   - {fileID: 960588994}
@@ -3923,6 +3964,7 @@ MonoBehaviour:
   Maze1Trigger: {fileID: 5960633906916177680}
   Maze2Trigger: {fileID: 381841568}
   Maze3Trigger: {fileID: 1477782584}
+  finalScoreText: {fileID: 0}
   TimerText: {fileID: 503523475}
   startButton: {fileID: 1574723790}
   restartButton: {fileID: 264539597}
@@ -3933,6 +3975,7 @@ MonoBehaviour:
   Bingo1: {fileID: 1017748641}
   Bingo2: {fileID: 841774973}
   Bingo3: {fileID: 1586164650}
+  TimerTextCanvas: {fileID: 0}
   OGSPOT: {fileID: 687603287}
   UMSRef: {fileID: 0}
 --- !u!1 &1445119765
@@ -4031,7 +4074,7 @@ Transform:
   m_GameObject: {fileID: 1477782584}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0083, z: 0}
   m_LocalScale: {x: 0.10578, y: 0, z: 0.10578}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4052,7 +4095,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4443,7 +4486,7 @@ Transform:
   m_GameObject: {fileID: 1586164650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8564851, y: 0.01079071, z: 0.8697787}
+  m_LocalPosition: {x: -0.8685, y: 0.0395, z: 0.8715}
   m_LocalScale: {x: -0.054971617, y: -0.054971617, z: -0.054971617}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4559,7 +4602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a2ce53b9d967648942d1b2ff9519b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 100
   upButton: {fileID: 675620296242676075}
   downButton: {fileID: 748825405}
   leftButton: {fileID: 961509465}
@@ -4583,6 +4626,7 @@ MonoBehaviour:
   Maze1Trigger: {fileID: 5960633906916177680}
   Maze2Trigger: {fileID: 381841568}
   Maze3Trigger: {fileID: 1477782584}
+  finalScoreText: {fileID: 63322188}
   TimerText: {fileID: 503523475}
   startButton: {fileID: 1574723790}
   restartButton: {fileID: 264539597}
@@ -4593,6 +4637,7 @@ MonoBehaviour:
   Bingo1: {fileID: 1017748641}
   Bingo2: {fileID: 841774973}
   Bingo3: {fileID: 1586164650}
+  TimerTextCanvas: {fileID: 853428568}
   OGSPOT: {fileID: 687603287}
   UMSRef: {fileID: 0}
 --- !u!1 &1819006754
@@ -4737,6 +4782,7 @@ MonoBehaviour:
   Maze1Trigger: {fileID: 5960633906916177680}
   Maze2Trigger: {fileID: 381841568}
   Maze3Trigger: {fileID: 1477782584}
+  finalScoreText: {fileID: 63322188}
   TimerText: {fileID: 503523475}
   startButton: {fileID: 1574723790}
   restartButton: {fileID: 264539597}
@@ -4747,6 +4793,7 @@ MonoBehaviour:
   Bingo1: {fileID: 1017748641}
   Bingo2: {fileID: 841774973}
   Bingo3: {fileID: 1586164650}
+  TimerTextCanvas: {fileID: 0}
   OGSPOT: {fileID: 687603287}
   UMSRef: {fileID: 0}
 --- !u!4 &1887288455
@@ -4859,7 +4906,7 @@ MonoBehaviour:
   m_text: 'Well done!
 
 
-    Time Used:'
+    Time Remaining:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f618cf84b36f90448ac5cb27e24e5811, type: 2}
   m_sharedMaterial: {fileID: -6307093101173092914, guid: f618cf84b36f90448ac5cb27e24e5811,
