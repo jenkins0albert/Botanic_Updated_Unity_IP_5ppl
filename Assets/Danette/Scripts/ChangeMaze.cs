@@ -1,3 +1,10 @@
+/*
+ * Author: Danette
+ * Date: 16/1/2024
+ * Description: Code consists of 2 parts
+ *              //Part 1: Change Maze upon collisions
+ *              //Part 2: Timer, countdowns
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
