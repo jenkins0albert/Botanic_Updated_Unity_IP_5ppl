@@ -1,3 +1,10 @@
+/*
+ * Author: Danette
+ * Date: 16/1/2024
+ * Description: Code consists of 2 parts
+ *              //Part 1: Change Maze upon collisions
+ *              //Part 2: Timer, countdowns
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,38 +25,43 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze1Trigger;
     public GameObject Maze2Trigger;
     public GameObject Maze3Trigger;
+    public TextMeshProUGUI finalScoreText;
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(bingoTag))
-        {
-            if (collision.gameObject == Maze1Trigger)
+        if (collision.gameObject.CompareTag("Maze1"))
         {
             Maze1.SetActive(false);
             Maze2.SetActive(true);
             Maze3.SetActive(false);
+                Debug.Log("Maze changed 1");
         }
-            else if(collision.gameObject == Maze2Trigger)
+
+        if(collision.gameObject.CompareTag("Maze2"))
         {
             Maze1.SetActive(false);
             Maze2.SetActive(false);
             Maze3.SetActive(true);
-        }
-            else if (collision.gameObject == Maze3Trigger)
+                Debug.Log("Maze changed 2");
+            }
+
+        if (collision.gameObject.CompareTag("Maze3"))
         {
             //Stop timer, send to FB
             StopCountdown();
-            canvasPanelENDLose.SetActive(true); //Show Win UI !
-            int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
-
+            canvasPanelENDWin.SetActive(true); //Show Win UI !
+            finalScoreText.text = TimerText.text;
+            TimerTextCanvas.SetActive(false);
+           // int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
+                Debug.Log("Maze1 end");
             //Firebase. Only item to insert is int Score
             //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
-            UpdateValueToFirebase(score);
+            //UpdateValueToFirebase(score);
 
         }
-        }
+        
         
     }
 
@@ -68,6 +80,7 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Bingo1;
     public GameObject Bingo2;
     public GameObject Bingo3;
+    public GameObject TimerTextCanvas;
 
     public GameObject OGSPOT;
 
