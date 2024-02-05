@@ -2,7 +2,7 @@
  * Author: Danette
  * Date: 16/1/2024
  * Description: Code consists of 2 parts
- *              //Part 1: Change Maze upon collisions
+ *              //Part 1: Change Maze and playing SFX upon collisions 
  *              //Part 2: Timer, countdowns
  */
 using System.Collections;
@@ -26,6 +26,7 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze2Trigger;
     public GameObject Maze3Trigger;
     public TextMeshProUGUI finalScoreText;
+    public AudioClip sparkleSound;
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
@@ -36,7 +37,8 @@ public class ChangeMaze : MonoBehaviour
             Maze1.SetActive(false);
             Maze2.SetActive(true);
             Maze3.SetActive(false);
-                Debug.Log("Maze changed 1");
+            AudioSource.PlayClipAtPoint(sparkleSound, transform.position); //Plays SFX
+            Debug.Log("Maze changed 1");
         }
 
         if(collision.gameObject.CompareTag("Maze2"))
@@ -44,22 +46,23 @@ public class ChangeMaze : MonoBehaviour
             Maze1.SetActive(false);
             Maze2.SetActive(false);
             Maze3.SetActive(true);
-                Debug.Log("Maze changed 2");
+            AudioSource.PlayClipAtPoint(sparkleSound, transform.position); //Plays SFX
+            Debug.Log("Maze changed 2");
             }
 
         if (collision.gameObject.CompareTag("Maze3"))
         {
             //Stop timer, send to FB
             StopCountdown();
+            AudioSource.PlayClipAtPoint(sparkleSound, transform.position); //Plays SFX
             canvasPanelENDWin.SetActive(true); //Show Win UI !
             finalScoreText.text = TimerText.text;
             TimerTextCanvas.SetActive(false);
-           // int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
-                Debug.Log("Maze1 end");
+            // int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
             //Firebase. Only item to insert is int Score
             //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
             //UpdateValueToFirebase(score);
-
+            Debug.Log("Maze1 end");
         }
         
         
