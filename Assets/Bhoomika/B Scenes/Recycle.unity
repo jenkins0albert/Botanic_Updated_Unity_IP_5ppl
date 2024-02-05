@@ -558,7 +558,7 @@ PrefabInstance:
     - target: {fileID: 6170024506220276263, guid: 0190fbc6e80e64a70be444eec7f11808,
         type: 3}
       propertyPath: m_text
-      value: Singapore categorises, its recylables in 3 different categories.
+      value: Singapore categorises, its recyclables in 3 different categories.
       objectReference: {fileID: 0}
     - target: {fileID: 6170024506220276263, guid: 0190fbc6e80e64a70be444eec7f11808,
         type: 3}
@@ -1822,10 +1822,10 @@ Transform:
   - {fileID: 1464722953}
   - {fileID: 1707865955}
   - {fileID: 5931388712621282261}
-  - {fileID: 1635140971015028888}
   - {fileID: 1034907133}
   - {fileID: 2429101604528558282}
   - {fileID: 404907819}
+  - {fileID: 1635140971015028888}
   - {fileID: 2026477452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2061,7 +2061,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2583,7 +2583,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2725,7 +2725,7 @@ PrefabInstance:
     - target: {fileID: 6170024506220276263, guid: 0190fbc6e80e64a70be444eec7f11808,
         type: 3}
       propertyPath: m_text
-      value: Singapore is known for their cleaniness. Locals recycle to play their
+      value: Singapore is known for their cleanliness. Locals recycle to play their
         part in saving Earth.
       objectReference: {fileID: 0}
     - target: {fileID: 6170024506220276263, guid: 0190fbc6e80e64a70be444eec7f11808,
@@ -3303,6 +3303,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4995960816975108819, guid: 6eb9f8f184149407a9001ac5e23d8f87,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5445089377963102611, guid: 6eb9f8f184149407a9001ac5e23d8f87,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3720,6 +3725,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7369209613180650135, guid: 5d403092dbe4e4ab599a75c65591b77e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7418426629763145269, guid: 5d403092dbe4e4ab599a75c65591b77e,
         type: 3}
       propertyPath: m_Name
@@ -3881,7 +3891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Good job. You have succesfully helped in sorting items. '
+  m_text: 'Good job. You have successfully helped in sorting items. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f618cf84b36f90448ac5cb27e24e5811, type: 2}
   m_sharedMaterial: {fileID: -6307093101173092914, guid: f618cf84b36f90448ac5cb27e24e5811,
@@ -4076,6 +4086,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8978850227322127761, guid: 46bda627418a54d15be9778f0e35c41b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4127,7 +4142,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
