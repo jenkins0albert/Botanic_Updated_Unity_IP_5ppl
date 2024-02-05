@@ -23,33 +23,35 @@ public class ChangeMaze : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(bingoTag))
-        {
-            if (collision.gameObject == Maze1Trigger)
+        if (collision.gameObject.CompareTag("Maze1"))
         {
             Maze1.SetActive(false);
             Maze2.SetActive(true);
             Maze3.SetActive(false);
+                Debug.Log("Maze changed 1");
         }
-            else if(collision.gameObject == Maze2Trigger)
+
+        if(collision.gameObject == Maze2Trigger)
         {
             Maze1.SetActive(false);
             Maze2.SetActive(false);
             Maze3.SetActive(true);
-        }
-            else if (collision.gameObject == Maze3Trigger)
+                Debug.Log("Maze changed 2");
+            }
+
+        if (collision.gameObject == Maze3Trigger)
         {
             //Stop timer, send to FB
             StopCountdown();
-            canvasPanelENDLose.SetActive(true); //Show Win UI !
+            canvasPanelENDWin.SetActive(true); //Show Win UI !
             int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
-
+                Debug.Log("Maze1 end");
             //Firebase. Only item to insert is int Score
             //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
             UpdateValueToFirebase(score);
 
         }
-        }
+        
         
     }
 

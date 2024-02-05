@@ -7,6 +7,7 @@ public class movinggrace : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Button upButton, downButton, leftButton, rightButton;
+
     // Start is called before the first frame update
     void Start()
     {
