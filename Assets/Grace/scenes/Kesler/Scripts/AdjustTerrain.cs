@@ -7,7 +7,12 @@ using TMPro;
 public class AdjustTerrain : MonoBehaviour
 {   
     public Slider ScaleSlider;
+    //public Slider RotateSlider;
 
+    //public float rotationMin = 0.0f;
+    //public float rotationMax = 45.0f;
+    //[SerializeField] float currentRotation = 0f;
+    
     [SerializeField] float currentScale = 0.1f;
 
     // Start is called before the first frame update
@@ -22,9 +27,9 @@ public class AdjustTerrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        //transform.localEulerAngles = new Vector3(0.0f)
         transform.localScale = new Vector3(ScaleSlider.value, ScaleSlider.value, ScaleSlider.value);
         Debug.Log("Current Scale: " + transform.localScale);
-
     }
 
     private void OnGUI()
