@@ -7503,7 +7503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &264102281
 Transform:
   m_ObjectHideFlags: 0
@@ -31721,7 +31721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &902270470
 Transform:
   m_ObjectHideFlags: 0
@@ -37393,7 +37393,7 @@ PrefabInstance:
     - target: {fileID: 1042237139381893757, guid: 1e8c403f619ca5f419a6a74c5745b39f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47171,7 +47171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1258643077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57604,7 +57604,7 @@ RectTransform:
   m_GameObject: {fileID: 1513977089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0036360212, y: 0.0036360212, z: 0.0036360212}
+  m_LocalScale: {x: 0.0017294671, y: 0.0017294671, z: 0.0017294671}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1595509465}
@@ -57612,7 +57612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0106}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513977091
@@ -63085,10 +63085,10 @@ MonoBehaviour:
   - {fileID: 264102280}
   maxObjectsToSpawn: 7
   spawnSize: {x: 0.1, y: 0.123819, z: 1}
-  timerText: {fileID: 0}
-  startPage: {fileID: 0}
-  endPage: {fileID: 0}
-  timePage: {fileID: 0}
+  timerText: {fileID: 985081087}
+  startPage: {fileID: 1012753175}
+  endPage: {fileID: 1677235814}
+  timePage: {fileID: 1431908935}
 --- !u!114 &1696889239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63170,7 +63170,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.087504, y: 4.087504, z: 4.087504}
+  m_LocalScale: {x: 3.2926886, y: 3.2926886, z: 3.2926886}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1513977090}
@@ -67047,7 +67047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1696889238}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
         m_MethodName: StartSpawning
         m_Mode: 1
@@ -68217,7 +68217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1936308721
 Transform:
   m_ObjectHideFlags: 0
@@ -72343,7 +72343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2077797314
 RectTransform:
   m_ObjectHideFlags: 0
