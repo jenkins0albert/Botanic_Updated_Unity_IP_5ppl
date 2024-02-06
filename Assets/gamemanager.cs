@@ -46,6 +46,7 @@ public class gamemanager : MonoBehaviour
     /// </summary>
     public void openGreenhouse()
     {
+        Debug.Log("open");
         GreenhouseNotifSound.Play();
         GreenhouseNotif.SetActive(true);
         Greenhouse.SetActive(true);
