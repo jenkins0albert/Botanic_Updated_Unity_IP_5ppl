@@ -25,6 +25,8 @@ public class movinggrace : MonoBehaviour
     // Button to move the object to the right.
     public Button rightButton;
 
+    public Rigidbody rg;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,32 +37,38 @@ public class movinggrace : MonoBehaviour
     }
 
     // Move the object upwards.
-    public void MoveUp()
-    {
-        transform.Translate(Vector3.forward * Time.deltaTime * 10);
-    }
+   
 
     // Move the object downwards.
+    public void MoveUp()
+    {
+        Move(Vector3.forward);
+    }
+
     public void MoveDown()
     {
-        transform.Translate(Vector3.back * Time.deltaTime * 10);
+        Move(Vector3.back);
     }
 
-    // Move the object to the left.
     public void MoveLeft()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * 10);
+        Move(Vector3.left);
     }
 
-    // Move the object to the right.
     public void MoveRight()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * 10);
+        Move(Vector3.right);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Additional update logic can be added here if needed
+    }
+
+    void Move(Vector3 direction)
+    {
+        Vector3 movement = direction * Time.deltaTime * moveSpeed;
+        rg.MovePosition(transform.position + movement);
     }
 }
