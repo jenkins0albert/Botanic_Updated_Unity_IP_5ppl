@@ -305,3 +305,6 @@ Assets/Settings/URP-HighFidelity.asset
 Assets/Settings/URP-Balanced.asset
 Assets/Resources/VuforiaConfiguration.asset
 ProjectSettings/AndroidResolverDependencies.xml
+Assets/Resources/alpha.shader
+Assets/VuforiaLicense.cs
+ProjectSettings/ProjectSettings.asset

@@ -2453,8 +2453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' Singapore is known for it''s cleaniness. Want to play your part in keeping
-    Singapore clean?'
+  m_text: Want to play your part in keeping Singapore clean?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f618cf84b36f90448ac5cb27e24e5811, type: 2}
   m_sharedMaterial: {fileID: -6307093101173092914, guid: f618cf84b36f90448ac5cb27e24e5811,
@@ -2797,7 +2796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move to the next target image to learn how to recyle.
+  m_text: Move to the next target image to learn how to recycle.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f618cf84b36f90448ac5cb27e24e5811, type: 2}
   m_sharedMaterial: {fileID: -6307093101173092914, guid: f618cf84b36f90448ac5cb27e24e5811,

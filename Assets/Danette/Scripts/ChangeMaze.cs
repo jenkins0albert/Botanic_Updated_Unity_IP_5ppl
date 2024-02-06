@@ -1,3 +1,10 @@
+/*
+ * Author: Danette
+ * Date: 16/1/2024
+ * Description: Code consists of 2 parts
+ *              //Part 1: Change Maze and playing SFX upon collisions 
+ *              //Part 2: Timer, countdowns
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +12,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEditor;
+using System.Xml.Linq;
 
 public class ChangeMaze : MonoBehaviour
 {
@@ -17,35 +25,47 @@ public class ChangeMaze : MonoBehaviour
     public GameObject Maze1Trigger;
     public GameObject Maze2Trigger;
     public GameObject Maze3Trigger;
+    public TextMeshProUGUI finalScoreText;
+    public AudioClip sparkleSound;
     //public GameObject UIStart; //Canvas for start button
     //public GameObject UIEnd; //Canvas for End canvas
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Maze1"))
+        if (collision.gameObject.CompareTag("Maze1"))
         {
             Maze1.SetActive(false);
             Maze2.SetActive(true);
             Maze3.SetActive(false);
+            AudioSource.PlayClipAtPoint(sparkleSound, transform.position); //Plays SFX
+            Debug.Log("Maze changed 1");
         }
-        else if(other.CompareTag("Maze2"))
+
+        if(collision.gameObject.CompareTag("Maze2"))
         {
             Maze1.SetActive(false);
             Maze2.SetActive(false);
             Maze3.SetActive(true);
-        }
-        else if (other.CompareTag("Maze3"))
+            AudioSource.PlayClipAtPoint(sparkleSound, transform.position); //Plays SFX
+            Debug.Log("Maze changed 2");
+            }
+
+        if (collision.gameObject.CompareTag("Maze3"))
         {
             //Stop timer, send to FB
             StopCountdown();
-            canvasPanelENDLose.SetActive(true); //Show Win UI !
-            int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
-
+            AudioSource.PlayClipAtPoint(sparkleSound, transform.position); //Plays SFX
+            canvasPanelENDWin.SetActive(true); //Show Win UI !
+            finalScoreText.text = TimerText.text;
+            TimerTextCanvas.SetActive(false);
+            // int score = Convert.ToInt32(TimerText.text); //Convert string of timer when stopped to INT
             //Firebase. Only item to insert is int Score
             //First/Fastest being the largest number(time remaining), Last/Slowest being the smallest number(time remaining)
-            UpdateValueToFirebase(score);
-
+            //UpdateValueToFirebase(score);
+            Debug.Log("Maze1 end");
         }
+        
+        
     }
 
 
@@ -60,6 +80,12 @@ public class ChangeMaze : MonoBehaviour
     public GameObject canvasPanelSTART; //Start version of UI
     public GameObject canvasPanelENDLose; // End (Lose)Version of UI
     public GameObject canvasPanelENDWin; // End (Win)Version of UI
+    public GameObject Bingo1;
+    public GameObject Bingo2;
+    public GameObject Bingo3;
+    public GameObject TimerTextCanvas;
+
+    public GameObject OGSPOT;
 
     public UpdateMazeScore UMSRef;
     
@@ -88,14 +114,28 @@ public class ChangeMaze : MonoBehaviour
         
     }
 
+    public void PlaceObjectAtPosition()
+    {
+        // Set the position of objectA to match the position of objectB
+        Bingo1.transform.position = OGSPOT.transform.position;
+        Bingo2.transform.position = OGSPOT.transform.position;
+        Bingo3.transform.position = OGSPOT.transform.position;
 
-// Start is called before the first frame update
+    }
+
+
+    // Start is called before the first frame update
     void Start()
     {
         startButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         startButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
         restartButton.onClick.AddListener(StartCountdown);//Start timer upon pressing start button
         restartButton.onClick.AddListener(hideCanvas);//Hide Canvas and show Maze1 Only
+
+        //startButton.onClick.AddListener(PlaceObjectAtPosition);
+        // restartButton.onClick.AddListener(PlaceObjectAtPosition);
+
+        
     }
 
     // Update is called once per frame
