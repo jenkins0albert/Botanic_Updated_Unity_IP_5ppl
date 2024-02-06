@@ -20,7 +20,7 @@ public class PickUp : MonoBehaviour
     //public int countObjs = 0;
 
     //Spawning area size
-    public Vector3 spawnSize = new Vector3(1f, 0.67777f, 1f);
+    public Vector3 spawnSize = new Vector3(0.1f, 0.123819f, 1f);
 
     //UI
     public TextMeshProUGUI timerText;
